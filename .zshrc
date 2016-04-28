@@ -28,6 +28,7 @@ antigen bundle supercrabtree/k
 #antigen bundle npm  # Aliases for npm (node.js package manager)
 #antigen bundle pip  # Autocomplete and a few other things for pip
 #antigen bundle kennethreitz/autoenv  # Directory-based shell environments 
+#antigen bundle common-aliases # Better to take examples from that to use
 
 antigen-theme blinks #amuse
 antigen-apply
@@ -47,3 +48,6 @@ elif [[ -s "/usr/local/rvm/scripts/rvm" ]] ; then
 else
   printf "ERROR: An RVM installation was not found.\n"
 fi
+
+alias ls='k -h'
+alias lsa='k -ah'
