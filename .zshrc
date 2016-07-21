@@ -1,4 +1,3 @@
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source "$HOME/.antigen/antigen.zsh"
 
 antigen use oh-my-zsh
@@ -38,16 +37,9 @@ zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
-# Load RVM into a shell session *as a function*
-if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
-  # First try to load from a user install
-  source "$HOME/.rvm/scripts/rvm"
-elif [[ -s "/usr/local/rvm/scripts/rvm" ]] ; then
-  # Then try to load from a root install
-  source "/usr/local/rvm/scripts/rvm"
-else
-  printf "ERROR: An RVM installation was not found.\n"
-fi
-
+## More detailed ls
 alias ls='k -h'
 alias lsa='k -ah'
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
