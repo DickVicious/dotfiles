@@ -29,8 +29,8 @@ antigen bundle supercrabtree/k
 #antigen bundle kennethreitz/autoenv  # Directory-based shell environments 
 #antigen bundle common-aliases # Better to take examples from that to use
 
-antigen-theme blinks #amuse
-antigen-apply
+antigen theme blinks #amuse
+antigen apply
 
 ## Key bindings for history-substring-search
 zmodload zsh/terminfo
@@ -38,8 +38,11 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
 ## More detailed ls
-alias ls='k -h'
-alias lsa='k -ah'
+#alias ls='k -h'
+alias lsa='ls -ah'
+alias ll='k'
+alias lla='k -ah'
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+export RBENV_ROOT=/usr/local/rbenv
+export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
